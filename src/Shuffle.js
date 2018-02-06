@@ -1,10 +1,11 @@
 import React, { Fragment } from 'react';
 
+function shuffleIt(e) {
+    e.preventDefault();
 
-function shuffleIt() {
     const deckSize = document.getElementById('deckSize').value;
 
-    if(deckSize % 2 !== 0) {
+    if (deckSize % 2 !== 0) {
         // <div class="alert alert-danger" role="alert">
         //     Must be divisible by 2!
         // </div>
@@ -15,7 +16,7 @@ function shuffleIt() {
     let deck = [];
     let result = [];
 
-    for(let i = 0; i < deckSize; i++) {
+    for (let i = 0; i < deckSize; i++) {
         deck.push(i);
     }
 
@@ -31,22 +32,29 @@ function shuffleIt() {
     document.getElementById('after').innerHTML = `[${result}]`;
 }
 
-
 export default function Shuffle() {
     return (
         <Fragment>
-            <h1 className="display-1">Shuffle</h1>
-            <div className="input-group mb-3">
-                <div className="input-group-prepend">
-                    <span className="input-group-text">Deck Size:</span>
+            <h1 className="display-1">Shuffle Deck</h1>
+            <form>
+                <div className="input-group mb-3">
+                    <div className="input-group-prepend">
+                        <span className="input-group-text">Deck Size:</span>
+                    </div>
+                    <input type="text" id="deckSize" className="form-control" placeholder="10" />
+                    <div className="input-group-append">
+                        <button className="btn btn-outline-secondary" type="submit" onClick={shuffleIt}>
+                            Submit
+                        </button>
+                    </div>
                 </div>
-                <input type="text" id="deckSize" className="form-control" placeholder="10" />
-                <div className="input-group-append">
-                    <button className="btn btn-outline-secondary" type="submit" onClick={shuffleIt}>Submit</button>
-                </div>
-            </div>
-            <p className="lead">Before: <kbd id="before">?</kbd></p>
-            <p className="lead">After: <kbd id="after">?</kbd></p>
+            </form>
+            <p className="lead">
+                Before: <kbd id="before">?</kbd>
+            </p>
+            <p className="lead">
+                After: <kbd id="after">?</kbd>
+            </p>
         </Fragment>
     );
 }
