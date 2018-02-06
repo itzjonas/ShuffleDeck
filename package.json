@@ -1,0 +1,18 @@
+{
+  "name": "shuffle-deck",
+  "description": "Code Challenge 2018-01-25",
+  "version": "0.0.25",
+  "dependencies": {
+    "react-dom": "latest",
+    "react": "latest"
+  },
+  "devDependencies": {
+    "react-scripts": "1.0.0"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
+  }
+}
